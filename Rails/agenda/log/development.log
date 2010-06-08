@@ -1,0 +1,735 @@
+  [4;36;1mSQL (0.000284)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000141)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.003913)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002007)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000227)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePessoas (20100427220650)
+  [4;36;1mSQL (0.000184)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002891)[0m   [0mCREATE TABLE "pessoas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255) DEFAULT NULL NULL, "data_de_nascimento" date DEFAULT NULL NULL, "altura" float DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.006911)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100427220650')[0m
+  [4;35;1mSQL (0.000243)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000213)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000068)[0m   [0mPRAGMA index_list("pessoas")[0m
+
+
+Processing PessoasController#index (for 127.0.0.1 at 2010-04-27 19:23:34) [GET]
+  Session ID: d7387ee5450252bc7f01c5d1a04bab35
+  Parameters: {"action"=>"index", "controller"=>"pessoas"}
+  [4;36;1mPessoa Load (0.000488)[0m   [0;1mSELECT * FROM "pessoas" [0m
+Rendering template within layouts/pessoas
+Rendering pessoas/index
+Completed in 0.00880 (113 reqs/sec) | Rendering: 0.00257 (29%) | DB: 0.00049 (5%) | 200 OK [http://localhost/pessoas]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:23:38) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--822bd9826b82119f70b7c5b6c62ef9c41fcb211c
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 0.06777 (14 reqs/sec) | Rendering: 0.06113 (90%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pessoas/new]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:23:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 0.01286 (77 reqs/sec) | Rendering: 0.00587 (45%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pessoas/new]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:26:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+ERROR: compiling _run_erb_47app47views47pessoas47new46html46erb RAISED compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...e_select :data_de_nascimento :start_year -20 ).to_s); _erbou...
+                              ^
+Function body: def _run_erb_47app47views47pessoas47new46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>New pessoa</h1>\n\n"
+
+;  form_for(@pessoa) do |f| ; _erbout.concat "\n  "
+; _erbout.concat(( f.error_messages ).to_s); _erbout.concat "\n\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :nome ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :nome ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :data_de_nascimento ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.date_select :data_de_nascimento :start_year -20 ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :altura ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :altura ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.submit "Create" ).to_s); _erbout.concat "\n  </p>\n"
+
+;  end ; _erbout.concat "\n\n"
+
+; _erbout.concat(( link_to 'Back', pessoas_path ).to_s); _erbout.concat "\n"
+; _erbout
+end
+Backtrace: /home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:25:in `compile_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/visitante/Desktop/agenda/app/controllers/pessoas_controller.rb:29:in `new'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/servers/webrick.rb:66
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/server.rb:39
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...e_select :data_de_nascimento :start_year -20 ).to_s); _erbou...
+                              ^) on line #12 of pessoas/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :data_de_nascimento %><br />
+12:     <%= f.date_select :data_de_nascimento :start_year -20 %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :altura %><br />
+
+    app/views/pessoas/new.html.erb:25:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+    vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/pessoas_controller.rb:29:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:27:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+ERROR: compiling _run_erb_47app47views47pessoas47new46html46erb RAISED compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...e_select :data_de_nascimento :start_year - 20 ).to_s); _erbo...
+                              ^
+Function body: def _run_erb_47app47views47pessoas47new46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>New pessoa</h1>\n\n"
+
+;  form_for(@pessoa) do |f| ; _erbout.concat "\n  "
+; _erbout.concat(( f.error_messages ).to_s); _erbout.concat "\n\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :nome ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :nome ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :data_de_nascimento ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.date_select :data_de_nascimento :start_year - 20 ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :altura ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :altura ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.submit "Create" ).to_s); _erbout.concat "\n  </p>\n"
+
+;  end ; _erbout.concat "\n\n"
+
+; _erbout.concat(( link_to 'Back', pessoas_path ).to_s); _erbout.concat "\n"
+; _erbout
+end
+Backtrace: /home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:25:in `compile_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/visitante/Desktop/agenda/app/controllers/pessoas_controller.rb:29:in `new'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/servers/webrick.rb:66
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/server.rb:39
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...e_select :data_de_nascimento :start_year - 20 ).to_s); _erbo...
+                              ^) on line #12 of pessoas/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :data_de_nascimento %><br />
+12:     <%= f.date_select :data_de_nascimento :start_year - 20 %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :altura %><br />
+
+    app/views/pessoas/new.html.erb:25:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+    vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/pessoas_controller.rb:29:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:27:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+ERROR: compiling _run_erb_47app47views47pessoas47new46html46erb RAISED compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...date_select :start_year - 20 :data_de_nascimento ).to_s); _e...
+                              ^
+Function body: def _run_erb_47app47views47pessoas47new46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<h1>New pessoa</h1>\n\n"
+
+;  form_for(@pessoa) do |f| ; _erbout.concat "\n  "
+; _erbout.concat(( f.error_messages ).to_s); _erbout.concat "\n\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :nome ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :nome ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :data_de_nascimento ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.date_select :start_year - 20 :data_de_nascimento ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.label :altura ).to_s); _erbout.concat "<br />\n    "
+; _erbout.concat(( f.text_field :altura ).to_s); _erbout.concat "\n  </p>\n  <p>\n    "
+
+
+; _erbout.concat(( f.submit "Create" ).to_s); _erbout.concat "\n  </p>\n"
+
+;  end ; _erbout.concat "\n\n"
+
+; _erbout.concat(( link_to 'Back', pessoas_path ).to_s); _erbout.concat "\n"
+; _erbout
+end
+Backtrace: /home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:25:in `compile_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/home/visitante/Desktop/agenda/app/controllers/pessoas_controller.rb:29:in `new'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+/home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/servers/webrick.rb:66
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+/home/visitante/Desktop/agenda/vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+/home/visitante/Desktop/agenda/vendor/rails/railties/lib/commands/server.rb:39
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/home/visitante/Desktop/agenda/app/views/pessoas/new.html.erb:12: syntax error, unexpected ':', expecting ')'
+...date_select :start_year - 20 :data_de_nascimento ).to_s); _e...
+                              ^) on line #12 of pessoas/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :data_de_nascimento %><br />
+12:     <%= f.date_select :start_year - 20 :data_de_nascimento %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :altura %><br />
+
+    app/views/pessoas/new.html.erb:25:in `compile_template'
+    vendor/rails/actionpack/lib/action_view/template.rb:55:in `prepare!'
+    vendor/rails/actionpack/lib/action_view/template.rb:34:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/pessoas_controller.rb:29:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:27:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+
+
+ActionView::TemplateError (undefined method `-' for :start_year:Symbol) on line #12 of pessoas/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :data_de_nascimento %><br />
+12:     <%= f.date_select :data_de_nascimento, :start_year - 1950 %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :altura %><br />
+
+    app/views/pessoas/new.html.erb:12:in `_run_erb_47app47views47pessoas47new46html46erb'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:317:in `fields_for'
+    vendor/rails/actionpack/lib/action_view/helpers/form_helper.rb:253:in `form_for'
+    app/views/pessoas/new.html.erb:3:in `_run_erb_47app47views47pessoas47new46html46erb'
+    vendor/rails/actionpack/lib/action_view/base.rb:338:in `send'
+    vendor/rails/actionpack/lib/action_view/base.rb:338:in `execute'
+    vendor/rails/actionpack/lib/action_view/template_handlers/compilable.rb:29:in `send'
+    vendor/rails/actionpack/lib/action_view/template_handlers/compilable.rb:29:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:35:in `render'
+    vendor/rails/actionpack/lib/action_view/template.rb:22:in `render_template'
+    vendor/rails/actionpack/lib/action_view/base.rb:245:in `render_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1108:in `render_for_file'
+    vendor/rails/actionpack/lib/action_controller/base.rb:865:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/base.rb:880:in `render_with_no_layout'
+    vendor/rails/actionpack/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `send'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:131:in `custom'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `call'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:160:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `each'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:154:in `respond'
+    vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'
+    app/controllers/pessoas_controller.rb:29:in `new'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:580:in `call_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    vendor/rails/actionpack/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    vendor/rails/activerecord/lib/active_record/query_cache.rb:8:in `cache'
+    vendor/rails/actionpack/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `send'
+    vendor/rails/actionpack/lib/action_controller/base.rb:529:in `process_without_filters'
+    vendor/rails/actionpack/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+    vendor/rails/actionpack/lib/action_controller/session_management.rb:130:in `process'
+    vendor/rails/actionpack/lib/action_controller/base.rb:389:in `process'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    vendor/rails/actionpack/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:112:in `handle_dispatch'
+    vendor/rails/railties/lib/webrick_server.rb:78:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    vendor/rails/railties/lib/webrick_server.rb:62:in `dispatch'
+    vendor/rails/railties/lib/commands/servers/webrick.rb:66
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    vendor/rails/activesupport/lib/active_support/dependencies.rb:509:in `require'
+    vendor/rails/railties/lib/commands/server.rb:39
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /home/visitante/Desktop/agenda/vendor/rails/actionpack/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:28:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 0.01521 (65 reqs/sec) | Rendering: 0.00844 (55%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pessoas/new]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:29:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 0.01488 (67 reqs/sec) | Rendering: 0.00837 (56%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pessoas/new]
+
+
+Processing PessoasController#new (for 127.0.0.1 at 2010-04-27 19:29:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlY2NiOGFlODhjYWNkOTBmZTY2YzdiOTk4YzIxMjJk
+MDEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--f23904fdb33b74945f2c6dd6de78cf319bd50ccf
+  Parameters: {"action"=>"new", "controller"=>"pessoas"}
+Rendering template within layouts/pessoas
+Rendering pessoas/new
+Completed in 0.01580 (63 reqs/sec) | Rendering: 0.00864 (54%) | DB: 0.00000 (0%) | 200 OK [http://localhost/pessoas/new]
